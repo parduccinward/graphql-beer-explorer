@@ -1,4 +1,4 @@
-beers = [
+db_beers = [
     {
         "name": "Budweiser",
         "type": "Lager",
