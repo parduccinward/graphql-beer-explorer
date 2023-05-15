@@ -1,5 +1,6 @@
 import graphene
-from db.database import beers
+from app.db.database import db_beers
+from utils.search import filter_dicts
 
 
 class Beer(graphene.ObjectType):
@@ -10,8 +11,13 @@ class Beer(graphene.ObjectType):
 
 
 class Query(graphene.ObjectType):
-    beer = graphene.Field(Beer, id=graphene.Int())
+    beers =  graphene.List(Beer, search=graphene.String())
 
-    def get_beer_by_name(self, info, name):
-        beer = list(filter(lambda beer: beer["name"].lower() == name.lower(), beers))
-        return beer
+    def resolve_beers(self, info, search=None, **kwargs):
+        if search:
+            filtered_beers = filter_dicts(db_beers, search)
+            return filtered_beers
+        return db_beers
+
+
+schema = graphene.Schema(query=Query)
