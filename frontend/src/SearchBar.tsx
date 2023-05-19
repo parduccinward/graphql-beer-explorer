@@ -2,9 +2,10 @@ import * as React from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import { fetchBeer } from "./api/FetchBeers";
+import { ISearchBarProps } from "./types/beers";
 
-const SearchBar: React.FC = ({}) => {
-  const [searchText, setSearchText] = React.useState("");
+const SearchBar: React.FC<ISearchBarProps> = ({setArrayOfBeers}) => {
+  const [searchText, setSearchText] = React.useState<string>("");
 
   const handleSearchTextChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -14,7 +15,8 @@ const SearchBar: React.FC = ({}) => {
 
   const handleClick = async () => {
     try {
-      fetchBeer(searchText);
+      const data = await fetchBeer(searchText);
+      setArrayOfBeers(data)
     } catch (err) {
       console.log(err);
     }

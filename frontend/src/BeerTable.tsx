@@ -8,9 +8,9 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import { BeerTableProps } from "./types/beers";
+import { IBeerTableProps } from "./types/beers";
 
-const BeerTable: React.FC<BeerTableProps> = ({ beers }) => {
+const BeerTable: React.FC<IBeerTableProps> = ({ beers }) => {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }}>

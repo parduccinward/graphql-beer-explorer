@@ -6,13 +6,17 @@ export interface IBeer {
 }
 
 export interface IGetBeerResponse {
-  beers: IBeer;
+  beers: IBeer[];
 }
 
 export interface IGetBeerVariables {
   search: string;
 }
 
-export interface BeerTableProps {
+export interface IBeerTableProps {
   beers: IBeer[];
+}
+
+export interface ISearchBarProps {
+  setArrayOfBeers: React.Dispatch<React.SetStateAction<IBeer[]>>;
 }
