@@ -4,6 +4,9 @@ export const GET_BEERS = gql`
   query GetBeers($search: String!) {
     beers(search: $search) {
       name
+      type
+      alcoholByVolume
+      breweryName
     }
   }
 `;
