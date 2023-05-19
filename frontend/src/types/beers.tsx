@@ -6,9 +6,9 @@ interface IBeer {
 }
 
 export interface IGetBeerResponse {
-  beer: IBeer;
+  beers: IBeer;
 }
 
 export interface IGetBeerVariables {
-  beerName: string;
+  search: string;
 }

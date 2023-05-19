@@ -13,7 +13,11 @@ const SearchBar: React.FC = ({}) => {
   };
 
   const handleClick = async () => {
-    fetchBeer(searchText);
+    try {
+      fetchBeer(searchText);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
