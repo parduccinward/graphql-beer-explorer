@@ -10,7 +10,7 @@ const client = new ApolloClient({
 export async function fetchBeer(search: string) {
   const { data } = await client.query<IGetBeerResponse, IGetBeerVariables>({
     query: GET_BEERS,
-    variables: { search:search},
+    variables: { search: search },
   });
 
   return data.beers;
