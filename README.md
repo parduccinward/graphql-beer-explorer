@@ -2,9 +2,6 @@
 
 ![Screenshot from 2023-05-19 18-25-32](https://github.com/parduccinward/graphql-beer-explorer/assets/22183427/0a6c1a4a-eff9-432b-ab59-f3ce75cdccbf)
 
-## Introduction
-"Beer Explorer" is a web application that allows users to search for and view details about different types of beers
-
 ## Technologies
 The following technologies were used in this project:
 
