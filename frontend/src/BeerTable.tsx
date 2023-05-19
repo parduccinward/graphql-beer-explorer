@@ -2,34 +2,33 @@ import React from "react";
 import {
   Table,
   TableBody,
-  TableCell,
   TableContainer,
   TableHead,
-  TableRow,
   Paper,
 } from "@mui/material";
 import { IBeerTableProps } from "./types/beers";
+import { StyledTableCell, StyledTableRow } from "./mui/StyledTableComponents";
 
 const BeerTable: React.FC<IBeerTableProps> = ({ beers }) => {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }}>
         <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Type</TableCell>
-            <TableCell>Alcohol By Volume</TableCell>
-            <TableCell>Brewery Name</TableCell>
-          </TableRow>
+          <StyledTableRow>
+            <StyledTableCell>Name</StyledTableCell>
+            <StyledTableCell>Type</StyledTableCell>
+            <StyledTableCell>Alcohol By Volume</StyledTableCell>
+            <StyledTableCell>Brewery Name</StyledTableCell>
+          </StyledTableRow>
         </TableHead>
         <TableBody>
           {beers.map((beer, index) => (
-            <TableRow key={index}>
-              <TableCell>{beer.name}</TableCell>
-              <TableCell>{beer.type}</TableCell>
-              <TableCell>{beer.alcoholByVolume}</TableCell>
-              <TableCell>{beer.breweryName}</TableCell>
-            </TableRow>
+            <StyledTableRow key={index}>
+              <StyledTableCell>{beer.name}</StyledTableCell>
+              <StyledTableCell>{beer.type}</StyledTableCell>
+              <StyledTableCell>{beer.alcoholByVolume}</StyledTableCell>
+              <StyledTableCell>{beer.breweryName}</StyledTableCell>
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>
